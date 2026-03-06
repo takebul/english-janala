@@ -202,7 +202,7 @@ document.getElementById("level-container")
             <a href=""><i class="fa-brands fa-facebook"></i></a>
             <a href=""><i class="fa-brands fa-youtube"></i></a>
             <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/takebul/english-janala"><i class="fa-brands fa-github"></i></a>
             </div>
             </div>
         </section>

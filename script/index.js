@@ -187,7 +187,7 @@ document.getElementById("level-container")
         footerContainer.innerHTML = "";
         const addFooter = document.createElement("div");
         addFooter.innerHTML = `
-        <section class="w-11/12 mx-auto flex justify-between mb-20">
+        <section class="w-11/12 mx-auto space-y-5 md:flex justify-between mb-20">
         <div class="space-y-2">
             <h2 class="flex gap-1"><span class="text-2xl font-semibold">English</span><img src="./assets/logo.png"
             alt=""><span class="font-bangla text-2xl font-medium">জানালা</span>

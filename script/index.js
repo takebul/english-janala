@@ -1,15 +1,17 @@
+// Step-8
 function pronounceWord(word) {
     const utterance = new SpeechSynthesisUtterance(word);
     utterance.lang = "en-US";
     window.speechSynthesis.speak(utterance);
 }
 
-
+// Step-7.0
 const createElements = (arr) => {
     const htmlElements = arr.map(el => `<span class="btn bg-blue-50 gap-1">${el}</span>`);
     return (htmlElements.join(" "));
 }
 
+// Step-9
 const manageSpinner = (status) => {
     if (status == true) {
         document.getElementById("spinner").classList.remove("hidden");
@@ -20,7 +22,7 @@ const manageSpinner = (status) => {
     }
 }
 
-
+// Work Start Step-1
 const loadLessons = () => {
     const url = "https://openapi.programming-hero.com/api/levels/all";
     fetch(url)
@@ -28,12 +30,14 @@ const loadLessons = () => {
         .then(json => displayLessons(json.data));
 };
 
+// Step-7.1
 const removeActive = () => {
     const lessonButtons = document.querySelectorAll(".lesson-btn");
     // console.log(lessonButtons);
     lessonButtons.forEach((btn) => btn.classList.remove("btn-active"));
 };
 
+// Step-3
 const loadLevelWord = (id) => {
     manageSpinner(true);
     const url = `https://openapi.programming-hero.com/api/level/${id}`;
@@ -47,22 +51,7 @@ const loadLevelWord = (id) => {
         });
 };
 
-// {
-//     "word": "Eager",
-//     "meaning": "আগ্রহী",
-//     "pronunciation": "ইগার",
-//     "level": 1,
-//     "sentence": "The kids were eager to open their gifts.",
-//     "points": 1,
-//     "partsOfSpeech": "adjective",
-//     "synonyms": [
-//         "enthusiastic",
-//         "excited",
-//         "keen"
-//     ],
-//     "id": 5
-// }
-
+// Step-5
 const loadWordDetail = async (id) => {
     const url = `https://openapi.programming-hero.com/api/word/${id}`;
     const res = await fetch(url);
@@ -70,6 +59,7 @@ const loadWordDetail = async (id) => {
     displayWordDetails(details.data);
 };
 
+// Step-6/7
 const displayWordDetails = (word) => {
     const detailsBox = document.getElementById("details-container");
     detailsBox.innerHTML = `
@@ -102,6 +92,7 @@ const displayWordDetails = (word) => {
     document.getElementById("word_modal").showModal();
 }
 
+// Step-4
 const displayLevelWord = (words) => {
     const wordContainer = document.getElementById("word-container");
     wordContainer.innerHTML = "";
@@ -118,13 +109,6 @@ const displayLevelWord = (words) => {
         return;
     }
 
-    // {
-    //   "id": 56,
-    //   "level": 2,
-    //   "word": "Frail",
-    //   "meaning": "দুর্বল / ভঙ্গুর",
-    //   "pronunciation": "ফ্রেইল"
-    // }
 
     words.forEach(word => {
         const wordCard = document.createElement("div");
@@ -145,7 +129,7 @@ const displayLevelWord = (words) => {
     manageSpinner(false);
 }
 
-
+// Step-2
 const displayLessons = (lessons) => {
     // 1. get the container & empty
     const levelContainer = document.getElementById("level-container");
@@ -165,7 +149,7 @@ const displayLessons = (lessons) => {
     };
 };
 
-
+// Step-10
 document.getElementById("btn-search").addEventListener("click", () => {
     removeActive();
     const input = document.getElementById("input-search");
@@ -180,6 +164,7 @@ document.getElementById("btn-search").addEventListener("click", () => {
         });
 });
 
+// Step-11
 document.getElementById("level-container")
     .addEventListener("click", () => {
         removeActive();
